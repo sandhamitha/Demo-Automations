@@ -56,6 +56,11 @@ with webdriver.Chrome() as driver:
     date_input.click()
     date_input.send_keys(datetime.date.today().strftime("%d/%m/%Y"))
 
+    # Resume Upload Option
+    # file_input = driver.find_element(By.XPATH, '//*[@id="file"]')
+    # file_path = "Demo-Upload.pdf"  
+    # file_input.send_keys(file_path)
+
     submit_button = driver.find_element(By.XPATH, '/html/body/form/button')
     submit_button.click()
 
