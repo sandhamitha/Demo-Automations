@@ -22,7 +22,7 @@ def extract_gender(pdf_path):
     
     return "unknown"
 
-pdf_path = "e:/Intern Testings (TJH)/JA Process Automation/test.pdf" # attached in the repo
+pdf_path = "e:/Intern Testings (TJH)/JA Process Automation/demo.pdf" # attached in the repo
 gender = extract_gender(pdf_path)
 print(f"Extracted gender is: {gender}")
 
@@ -37,14 +37,14 @@ with webdriver.Chrome() as driver:
 
     selection_input = driver.find_element(By.XPATH, '//*[@id="selection"]')
     select = Select(selection_input)
-    select.select_by_visible_text("item 1")
+    select.select_by_visible_text("Item 1")
 
     #for i in range()
     # driver.find_element(By.XPATH, ).click()
     gender_xpaths = {
-        "male": '//*[@id="check1"]/option[1]',
-        "female": '//*[@id="check2"]/option[2]',        
-        "rather not say": '//*[@id="check3"]/option[3]'
+        "male": '//*[@id="check1"]', #option 1
+        "female": '//*[@id="check2"]', #option 2       
+        "rather not say": '//*[@id="check3"]' #option 3
     }
 
     if gender and gender in gender_xpaths:
